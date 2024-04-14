@@ -12,7 +12,21 @@ public class Mascota {
     private int Energia;
     private int Felicidad;
     private Estado estado;
+   
+    //setters de items
 
+    public void aplicarMedicina(){
+        //int valor = ((Salud+40)>100)?
+        Salud = ((Salud+40)>100)? 100 : Salud+40;
+    }
+    public void aplicarJuguete(){
+        Felicidad = ((Felicidad+30)>100)? 100 : Felicidad+30;
+    }
+    public void aplicarComida(){
+        Salud = ((Salud+20)>100)? 100 : Salud+20;
+        Energia = ((Energia+20)>100)? 100 : Energia+20;
+    }
+    
     /* getters */
 
     public Mascota(String nombre_mascota) {
