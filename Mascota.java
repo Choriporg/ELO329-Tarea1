@@ -16,7 +16,6 @@ public class Mascota {
     //setters de items
 
     public void aplicarMedicina(){
-        //int valor = ((Salud+40)>100)?
         Salud = ((Salud+40)>100)? 100 : Salud+40;
     }
     public void aplicarJuguete(){
