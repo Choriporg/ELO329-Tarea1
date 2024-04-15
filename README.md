@@ -1,18 +1,20 @@
 # ELO329-Tarea1
 
-Tarea 1: ELO-329 Diseño y Programación Orientado a Objetos.
+## Tarea 1: ELO-329 Diseño y Programación Orientado a Objetos.
 
-Simulador de mascota virtual tipo pou.
+Es un simulador de mascota virtual similar a pou, pero se trabaja por consola.
 
-Estatus: EN PROCESO
+### Estatus: EN PROCESO
 
-Grupo 1:
 
-  Vicente Moya
+### Instrucciones de uso:
+-  se debe tener makefile instalado (sudo apt install make en linux).
+-  correr el comando make en el directorio de todos los archivos.
+-  correr el comando make run para que comience el programa.
 
-  Eduardo Palma
-
-  Nicolas Mauricio
-
-  Ignacio González
+### Grupo 1:
+  - Vicente Moya
+  - Eduardo Palma
+  - Nicolas Mauricio
+  - Ignacio González
 
