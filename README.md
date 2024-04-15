@@ -1,5 +1,3 @@
-# ELO329-Tarea1
-
 ## Tarea 1: ELO-329 Diseño y Programación Orientado a Objetos.
 
 Es un simulador de mascota virtual similar a pou, pero se trabaja por consola.
@@ -15,6 +13,6 @@ Es un simulador de mascota virtual similar a pou, pero se trabaja por consola.
 ### Grupo 1:
   - Vicente Moya
   - Eduardo Palma
-  - Nicolas Mauricio
+  - Nicolas Vergara
   - Ignacio González
 
