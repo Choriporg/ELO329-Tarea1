@@ -8,7 +8,7 @@ Es un simulador de mascota virtual similar a pou, pero se trabaja por consola.
 ### Instrucciones de uso:
 -  se debe tener makefile instalado (sudo apt install make en linux).
 -  correr el comando make en el directorio de todos los archivos.
--  correr el comando make run para que comience el programa.
+-  correr el comando make run CONFIG_FILE=(aqui va el archivo que se desea utilizar como configuracion) para que comience el programa.
 
 ### Grupo 1:
   - Vicente Moya
