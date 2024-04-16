@@ -18,7 +18,7 @@ CLASSES = $(SOURCES:.java=.class)
 
 # Regla para construir el programa
 $(MAIN): $(CLASSES)
-	@echo "Compilación finalizada. Ejecuta con: make run"
+	@echo "Compilación finalizada. Ejecuta con: make run [CONFIG_FILE=archivo.csv]"
 
 # Regla para compilar los archivos .java
 %.class: %.java
@@ -26,7 +26,7 @@ $(MAIN): $(CLASSES)
 
 # Regla para ejecutar el programa
 run: $(MAIN)
-	$(JAVA) $(MAIN)
+	$(JAVA) $(MAIN) $(CONFIG_FILE)
 
 # Regla para limpiar archivos generados
 clean:

@@ -30,7 +30,7 @@ public class Main {
 
         // Creación de inventario vacío
 
-        // Inventario inventario = new Inventario();
+        Inventario inventario = new Inventario();
 
         // Llenando inventario
         while (in.hasNextLine()) {
