@@ -3,68 +3,86 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-        // Carga de archivo config.csv
-        if (args.length != 1) {
-            System.out.println("Usage: java Stage1 <config.csv>");
-            System.exit(-1);
+public class Main{
+
+    //tiempo
+    double tiempo = 0.0;    
+
+    //main
+    public static void main(String[] args) {
+
+        //tests
+        Main testStage= new Main();
+        Mascota pow = new Mascota("pow");
+        Inventario inv = new Inventario();
+        inv.agregarItem("Comida","Hueso",5,pow);
+        inv.agregarItem("Juguete","Pelota",3,pow);
+        inv.agregarItem("Medicina","Vacuna",2,pow);
+
+
+        while(pow.estado != Estado.Muerto){
+            testStage.menuGeneral(inv, pow);
         }
+    };
 
-        // Creación de objeto Mascota
-        Mascota mascota = new Mascota("Default name");
-        mascota.mostrarDatos();
+    public void menuGeneral(Inventario storage, Mascota testMascota){
 
-        Scanner in = new Scanner(new File(args[0]));
-        Main stage1 = new Main();
-        // Lectura de archivo config.csv
-        stage1.readConfiguration(in);
+        Scanner entrada =new Scanner(System.in);
 
-        stage1.executeAction(new Scanner(System.in), System.out);
+        System.out.println("--------------------");
+        System.out.println("tiempo simulado: "+tiempo+" unidades");
+        System.out.println("Presione (1) para dormir");
+        System.out.println("Presione (2) para mostrar Inventario");
+        System.out.println("Presione (3) para ejecutar accion");
+        System.out.println("Presione (C) para continuar la simulacion");
+        System.out.println("Presione (x) para salir");
+
+        char comando = entrada.next().charAt(0);
+
+        switch(comando){
+            case '1':
+                //testMascota.dormir();
+                tiempo += 0.5;
+                break;
+            case '2':
+                storage.obtenerItem();
+                break;
+            case '3':
+                subMenu(storage, testMascota);
+                break;
+            case 'C':
+                testMascota.mostrarDatos();
+                tiempo += 0.5;            
+                break;
+            case 'x':
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Comando no valido");
+                break;
+        };
+
+
     }
 
-    public void readConfiguration(Scanner in) {
-        // Creación de mascota
-        String nombre_mascota = in.nextLine();
-        mascota = new Mascota(nombre_mascota);
 
-        // Creación de inventario vacío
+    public void subMenu(Inventario storage, Mascota testMascota){
 
-        Inventario inventario = new Inventario();
+        System.out.println("--Menu de Acciones--");
+        System.out.println("Ingrese el id del item a usar");
+        System.out.println("Presione (x) para volver al menu principal");
+        
+        Scanner entrada = new Scanner(System.in);
+        String comando = entrada.nextLine();
 
-        // Llenando inventario
-        while (in.hasNextLine()) {
-            String linea = in.nextLine();
-            String[] item_csv = linea.split(";");
-            int id = Integer.parseInt(item_csv[0]);
-            String tipoItem = item_csv[1];
-            String nombreItem = item_csv[2];
-            int cantidad = Integer.parseInt(item_csv[3]);
-
-            /*
-             * Completar código para inicialización de inventario en la etapa
-             * que corresponda
-             */
+        if(comando.equals("x")){
+            return;
         }
-    }
+        int valor = Integer.parseInt(comando);
+        storage.usarItem(valor);
+    };
 
-    public void executeAction(Scanner in, PrintStream out) {
-        /*
-         * Completar código con manejo de acciones y menú en las etapas que corresponda
-         * e incremento del tiempo dependiendo de la etapa
-         */
 
-    }
 
-    public void printEstado(float step, PrintStream out) {
-        /*
-         * Completar método que muestra el estado de la Mascota y del inventario
-         * dependiendo de la etapa
-         */
 
-    }
-
-    private Mascota mascota;
-    // private Inventario inventario; // Descomentar cuando se haya creado el
-    // inventario
 }
