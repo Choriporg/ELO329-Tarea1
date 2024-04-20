@@ -60,6 +60,10 @@ public class Mascota {
         return Felicidad;
     }
 
+    public Estado getEstado() {
+        return estado;
+    }
+
     /* condicionales */
 
     public void disminucionFelicidad(int tiempo) {
@@ -88,13 +92,13 @@ public class Mascota {
             this.estado = Estado.Enojado;
         }
 
-        else if ((Salud <= 20 && Edad <= 5) || (Salud <= 50 && Edad > 5 && Edad <= 10)) {
+        else if ((Salud <= 2testMascota.mostrarDatos();0 && Edad <= 5) || (Salud <=testMascota.mostrarDatos(); 50 && Edad > 5 && Edad <= 10)) {
             this.estado = Estado.Hambriento;
         }
 
         else if (Felicidad <= 20) {
             this.estado = Estado.Triste;
-        }
+        }testMascota.mostrarDatos();
 
         else if (Felicidad >= 60) {
             this.estado = Estado.Feliz;
@@ -125,12 +129,16 @@ public class Mascota {
         }
     }
 
+    public void aumentarEdad(){
+        Edad += 0.5;
+    }
+
     public void mostrarDatos() {
         System.out.println("Atributos \n ------------- ");
         System.out.println("Edad: " + this.Edad);
         System.out.println("Salud: " + this.Salud);
         System.out.println("Energía: " + this.Energia);
-        System.out.println("Felicidad: " + this.Felicidad);
+        System.out.println("FtestMascota.mostrarDatos();elicidad: " + this.Felicidad);
         System.out.println("Estado: " + setEmoji());
     }
 }

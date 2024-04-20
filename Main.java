@@ -20,7 +20,8 @@ public class Main{
         inv.agregarItem("Medicina","Vacuna",2,pow);
 
 
-        while(pow.estado != Estado.Muerto){
+        while(pow.getEstado() != Estado.Muerto){
+            pow.mostrarDatos();
             testStage.menuGeneral(inv, pow);
         }
     };
@@ -43,6 +44,7 @@ public class Main{
             case '1':
                 //testMascota.dormir();
                 tiempo += 0.5;
+                testMascota.edad += 0.5;
                 break;
             case '2':
                 storage.obtenerItem();
