@@ -37,6 +37,7 @@ class Comida extends Item{
     public void darComida(){
         if(cantidad>0)
             mascota.aplicarComida();
+            cantidad--;
     }
     public void printItemAplicado(){System.out.println("Dando de comer "+nombre);}
 
@@ -49,6 +50,7 @@ class Medicina extends Item{
     public void darMedicina(){
         if(cantidad >0)//si la cantidad de este item no satisface, no se podra aplicar la funcion que aumente los valores de la mascota, en este casson salud.
             mascota.aplicarMedicina();//se usa el metodo definido en mascota para modificar atributos del mismo.
+            cantidad--;//se disminuye la cantidad de medicina.
         }
     public void printItemAplicado(){System.out.println("Dando la medicina "+nombre);}
 }
@@ -61,6 +63,7 @@ class Juguete extends Item{
     public void darJuguete(){
         if(cantidad > 0)
             mascota.aplicarJuguete();
+            cantidad--;
     }
     public void printItemAplicado(){System.out.println("Usando Juguete" + nombre);}
 }

@@ -68,13 +68,13 @@ public class Mascota {
 
     public void disminucionFelicidad(int tiempo) {
         if (Salud <= 10) {
-            Felicidad -= (20 * tiempo);
+            Felicidad = ((20 * tiempo)<=0)? 0 : 20 * tiempo;
         } else if (Salud <= 50 && (5 < Edad && Edad <= 10)) {
-            Felicidad -= (20 * tiempo);
-            Energia -= (10 * tiempo);
+            Felicidad = ((20 * tiempo)<=0)? 0 : 20 * tiempo;
+            Energia = ((10 * tiempo)<=0)? 0 : 10 * tiempo;
         } else if (Salud <= 50 && Edad > 10) {
-            Felicidad -= (30 * tiempo);
-            Energia -= (20 * tiempo);
+            Felicidad = ((30 * tiempo)<=0)? 0 : 30 * tiempo;
+            Energia = ((20 * tiempo)<=0)? 0 : 20 * tiempo;
         }
     }
 
@@ -92,13 +92,13 @@ public class Mascota {
             this.estado = Estado.Enojado;
         }
 
-        else if ((Salud <= 2testMascota.mostrarDatos();0 && Edad <= 5) || (Salud <=testMascota.mostrarDatos(); 50 && Edad > 5 && Edad <= 10)) {
+        else if ((Salud <= 20 && Edad <= 5) || (Salud <= 50 && Edad > 5 && Edad <= 10)) {
             this.estado = Estado.Hambriento;
         }
 
         else if (Felicidad <= 20) {
             this.estado = Estado.Triste;
-        }testMascota.mostrarDatos();
+        }
 
         else if (Felicidad >= 60) {
             this.estado = Estado.Feliz;
@@ -130,15 +130,24 @@ public class Mascota {
     }
 
     public void aumentarEdad(){
-        Edad += 0.5;
+        Edad = ((Edad+0.5)>15)? 15 : Edad+0.5;
+        Salud -= 5;
+        Energia = ((Energia-5)<=0)? 0 : Energia-5;
+        Felicidad = ((Felicidad-5)<=0)? 0 : Felicidad-5;
     }
 
+
+    public void dormir(){
+        Energia = ((Energia+30)>100)? 100 : Energia+30;
+        Felicidad = ((Felicidad+15)>100)? 100 : Felicidad+15;
+        setEstado();
+    }
     public void mostrarDatos() {
         System.out.println("Atributos \n ------------- ");
         System.out.println("Edad: " + this.Edad);
         System.out.println("Salud: " + this.Salud);
         System.out.println("Energía: " + this.Energia);
-        System.out.println("FtestMascota.mostrarDatos();elicidad: " + this.Felicidad);
+        System.out.println("Felicidad: " + this.Felicidad);
         System.out.println("Estado: " + setEmoji());
     }
 }

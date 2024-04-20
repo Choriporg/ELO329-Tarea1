@@ -7,7 +7,7 @@ public class Inventario{
 
     public Inventario(){
         items = new ArrayList<>();
-        Tiempo = 0.0;
+        
     }
     public void agregarItem(String tipo,String nombre, int cantidad,Mascota mascota){
 
@@ -30,17 +30,18 @@ public class Inventario{
                 if (elementos instanceof Medicina) {
                     Medicina medicina = (Medicina) elementos;
                     medicina.darMedicina();
-                    Tiempo+=0.5;
+                    
+                    
                 }
-                if(elementos instanceof Comida){
+                else if(elementos instanceof Comida){
                     Comida comida = (Comida) elementos;
                     comida.darComida();
-                    Tiempo+=0.5;
+                    
                 }
-                if(elementos instanceof Juguete){
+                else if(elementos instanceof Juguete){
                     Juguete juguete = (Juguete) elementos;
                     juguete.darJuguete();
-                    Tiempo+=0.5;
+                    
                 }
             }
         }
@@ -55,7 +56,5 @@ public class Inventario{
                 System.out.println("#" + items.get(i).obtenerId() + " : " + items.get(i).obtenerNombre() + ", cantidad : " + items.get(i).obtenerCantidad());
         }
     }
-    public double obtenerTiempo(){
-        return Tiempo;
-    }
+
 }
