@@ -67,16 +67,22 @@ public class Mascota {
     /* condicionales */
 
     public void disminucionFelicidad(int tiempo) {
-        if (Salud <= 10) {
-            Felicidad = ((20 * tiempo)<=0)? 0 : 20 * tiempo;
-        } else if (Salud <= 50 && (5 < Edad && Edad <= 10)) {
-            Felicidad = ((20 * tiempo)<=0)? 0 : 20 * tiempo;
-            Energia = ((10 * tiempo)<=0)? 0 : 10 * tiempo;
-        } else if (Salud <= 50 && Edad > 10) {
-            Felicidad = ((30 * tiempo)<=0)? 0 : 30 * tiempo;
-            Energia = ((20 * tiempo)<=0)? 0 : 20 * tiempo;
+        System.out.println(tiempo);
+        
+        if (Edad <= 5 && Salud <= 10){
+            Felicidad = (Felicidad - (20 * tiempo) <= 0) ? 0 : Felicidad - (20 * tiempo);
+
+        } else if (Edad > 5 && Edad <= 10 && Salud <= 50){
+            Felicidad = (Felicidad - (20 * tiempo) <= 0) ? 0 : Felicidad - (20* tiempo);
+            Energia = (Energia - (10 * tiempo) <= 0) ? 0 : Energia - (10 * tiempo);
+
+        } else if (Edad > 10 && Salud <= 50){
+            Felicidad = (Felicidad - (30 * tiempo) <= 0) ? 0 : Felicidad - (30 * tiempo);
+            Energia = (Energia - (20 * tiempo) <= 0) ? 0 : Energia - (20 * tiempo);
         }
-    }
+        }
+        
+    
 
     public void  setEstado() {
 
@@ -141,13 +147,14 @@ public class Mascota {
         Energia = ((Energia+30)>100)? 100 : Energia+30;
         Felicidad = ((Felicidad+15)>100)? 100 : Felicidad+15;
         setEstado();
+        System.out.println(">>" + nombre_mascota + " ha dormido como un tronco!!! ^-^\n\n");
     }
     public void mostrarDatos() {
-        System.out.println("Atributos \n ------------- ");
-        System.out.println("Edad: " + this.Edad);
-        System.out.println("Salud: " + this.Salud);
-        System.out.println("Energía: " + this.Energia);
-        System.out.println("Felicidad: " + this.Felicidad);
-        System.out.println("Estado: " + setEmoji());
+        System.out.println("Atributos");
+        System.out.println("\t>> Edad: " + this.Edad);
+        System.out.println("\t>> Salud: " + this.Salud);
+        System.out.println("\t>> Energía: " + this.Energia);
+        System.out.println("\t>> Felicidad: " + this.Felicidad);
+        System.out.println("\t>> Estado: " + setEmoji());
     }
 }

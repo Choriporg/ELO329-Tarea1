@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class Inventario{
 
     private ArrayList<Item> items;
-    private double Tiempo;
-
     public Inventario(){
         items = new ArrayList<>();
         
@@ -53,7 +51,7 @@ public class Inventario{
                 i--;
             }
             else
-                System.out.println("#" + items.get(i).obtenerId() + " : " + items.get(i).obtenerNombre() + ", cantidad : " + items.get(i).obtenerCantidad());
+                System.out.println("\t>> #" + items.get(i).obtenerId() + " : " + items.get(i).obtenerNombre() + ", cantidad : " + items.get(i).obtenerCantidad());
         }
     }
 

@@ -4,7 +4,6 @@ public abstract class Item {
 
     protected static int id;//aqui estableci un id que va aumentando segun objetos que se vayan agregando.
     protected int id_siguiente;
-
     protected String tipo;
     protected String nombre;
     protected int cantidad;
@@ -18,12 +17,13 @@ public abstract class Item {
         this.cantidad = cantidad;
         this.mascota = mascota;
         id++;
-        id_siguiente = id;
+        id_siguiente = id;        
     }
+
     //aqui estan los getters, nombrados por obtener en cada caso ..
-    public int obtenerId(){return id_siguiente;}
     public String obtenerNombre(){return nombre;}
     public int obtenerCantidad(){return cantidad;}
+    public int obtenerId(){return id;}
 
     public abstract void printItemAplicado();
 }
