@@ -30,8 +30,6 @@ public class Main{
         while(mascota.getEstado() != Estado.Muerto){
             stage1.menuGeneral();
         }
-
-        mascota.mostrarDatos();
         System.out.println(">> La mascota ha muerto :c"); 
     };
 
@@ -72,13 +70,12 @@ public class Main{
 
             case '3':
                 subMenu();
-                mostrarEstadisticas();
                 break;
 
             case 'C':
                 mascota.aumentarEdad();
                 incrementoTiempo++;        
-                mascota.disminucionFelicidad(incrementoTiempo);
+                mascota.disminucionFelicidad();
                 mascota.setEstado();  
                 System.out.println("Avanzando en el tiempo...\n");
                 mostrarEstadisticas();

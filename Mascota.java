@@ -66,19 +66,37 @@ public class Mascota {
 
     /* condicionales */
 
-    public void disminucionFelicidad(int tiempo) {
-        System.out.println(tiempo);
+    public void disminucionFelicidad() {
         
         if (Edad <= 5 && Salud <= 10){
             Felicidad -= 20;
+            if (Felicidad < 0) {
+                Felicidad = 0;
+            }
 
         } else if (Edad > 5 && Edad <= 10 && Salud <= 50){
             Felicidad -= 20;
+            if(Felicidad < 0){
+                Felicidad = 0;
+            }
+
             Energia -= 10;
+
+            if(Energia < 0){
+                Energia = 0;
+            }
 
         } else if (Edad > 10 && Salud <= 50){
             Felicidad -= 30;
+            
+            if(Felicidad < 0){
+                Felicidad = 0;
+            }
             Energia -= 20;
+
+            if(Energia < 0){
+                Energia = 0;
+            }
         }
         }
         
