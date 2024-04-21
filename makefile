@@ -30,4 +30,4 @@ run: $(MAIN)
 
 # Regla para limpiar archivos generados
 clean:
-	$(RM) $(CLASSES)
+	$(RM) $(wildcard *.class)
