@@ -2,8 +2,9 @@ import java.util.*;
 public abstract class Item {
     // Los atributos serán protected para que las clases Comida, Juguete y Medicina puedan acceder a ellos.
 
-    protected static int id;//aqui estableci un id que va aumentando segun objetos que se vayan agregando.
+    protected static int counter = 0;//aqui estableci un id que va aumentando segun objetos que se vayan agregando.
     protected int id_siguiente;
+    protected int id;
     protected String tipo;
     protected String nombre;
     protected int cantidad;
@@ -16,7 +17,7 @@ public abstract class Item {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.mascota = mascota;
-        id++;
+        this.id = ++counter;
         id_siguiente = id;        
     }
 
