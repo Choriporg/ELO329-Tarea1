@@ -70,15 +70,15 @@ public class Mascota {
         System.out.println(tiempo);
         
         if (Edad <= 5 && Salud <= 10){
-            Felicidad = (Felicidad - (20 * tiempo) <= 0) ? 0 : Felicidad - (20 * tiempo);
+            Felicidad -= 20;
 
         } else if (Edad > 5 && Edad <= 10 && Salud <= 50){
-            Felicidad = (Felicidad - (20 * tiempo) <= 0) ? 0 : Felicidad - (20* tiempo);
-            Energia = (Energia - (10 * tiempo) <= 0) ? 0 : Energia - (10 * tiempo);
+            Felicidad -= 20;
+            Energia -= 10;
 
         } else if (Edad > 10 && Salud <= 50){
-            Felicidad = (Felicidad - (30 * tiempo) <= 0) ? 0 : Felicidad - (30 * tiempo);
-            Energia = (Energia - (20 * tiempo) <= 0) ? 0 : Energia - (20 * tiempo);
+            Felicidad -= 30;
+            Energia -= 20;
         }
         }
         

@@ -124,7 +124,7 @@ public class Main{
         // Llenando inventario
         while (in.hasNextLine()) {
             String linea = in.nextLine();
-            String[] item_csv = linea.split(";");
+            String[] item_csv = linea.split(";");          
             String tipoItem = item_csv[1];
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
