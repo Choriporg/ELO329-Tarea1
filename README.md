@@ -6,6 +6,7 @@ Es un juego por consola realizado en java el cuál permite interactuar y cuidar 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Analisis](#analisis)
 - [Contributors](#contributors)
 - [License](#license)
 
@@ -18,7 +19,7 @@ Es un juego por consola realizado en java el cuál permite interactuar y cuidar 
 - el programa debería iniciar y podrá jugar hasta que su mascota muera
 - si corre el comando `make clean` todos los archivos `.class` serán descartados
 
-## ANALISIS
+## Analisis
 - en la  siguiente imagen se puede observar un análisis cuantitativo de la simulación de prueba de la mascota ![imagen](https://github.com/Choriporg/ELO329-Tarea1/blob/main/graficas.png)
 
 
