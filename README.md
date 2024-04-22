@@ -19,7 +19,7 @@ Es un juego por consola realizado en java el cuál permite interactuar y cuidar 
 - si corre el comando `make clean` todos los archivos `.class` serán descartados
 
 ## ANALISIS
-- en la ![imagen](https://github.com/Choriporg/ELO329-Tarea1/blob/main/graficas.png) siguiente imagen se puede observar un análisis cuantitativo de la simulación de prueba de la mascota
+- en la  siguiente imagen se puede observar un análisis cuantitativo de la simulación de prueba de la mascota ![imagen](https://github.com/Choriporg/ELO329-Tarea1/blob/main/graficas.png)
 
 
 ## Contributors
