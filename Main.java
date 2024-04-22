@@ -2,7 +2,16 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
+import java.io.FileOutputStream;
 
+
+
+/**
+ * La clase Main es la clase principal del programa de simulación de mascotas.
+ * Contiene el método main que inicia la ejecución del programa y otros métodos
+ * para mostrar estadísticas, manejar el menú principal y submenús, leer la configuración
+ * desde un archivo, y guardar la salida en un archivo.
+ */
 public class Main{
     static int incrementoTiempo = 0;
     static Mascota mascota;
@@ -26,10 +35,16 @@ public class Main{
         System.out.println("Configuración leída correctamente\n");
         stage1.mostrarEstadisticas();
         
+        // creacion del archivo output.csv
+        PrintStream output = new PrintStream(new FileOutputStream("output.csv"));
+        output.print("TiempoSimulado, Edad, Salud, Energia, Felicidad\n");
+
         //Bucle principal de la simulación, se ejecutará hasta la muerte de la mascota.
         while(mascota.getEstado() != Estado.Muerto){
             stage1.menuGeneral();
+            stage1.guardarOutput(output);
         }
+        output.close();
         System.out.println(">> La mascota ha muerto :c"); 
     };
 
@@ -48,7 +63,7 @@ public class Main{
         System.out.println(">> Presione (1) para dormir");
         System.out.println(">> Presione (2) para mostrar inventario");
         System.out.println(">> Presione (3) para ejecutar accion");
-        System.out.println(">> Presione (C) para continuar la simulacion");
+        System.out.println(">> Presione (c) para continuar la simulacion");
         System.out.println(">> Presione (x) para salir");
 
         char comando = entrada.next().charAt(0);
@@ -72,7 +87,7 @@ public class Main{
                 subMenu();
                 break;
 
-            case 'C':
+            case 'c':
                 mascota.aumentarEdad();
                 incrementoTiempo++;        
                 mascota.disminucionFelicidad();
@@ -128,4 +143,17 @@ public class Main{
             inventary.agregarItem(tipoItem, nombreItem, cantidad, mascota);
         }
     }
+
+    
+    public void guardarOutput(PrintStream archivo) {
+        try {
+
+            archivo.print((incrementoTiempo * 0.5) + ";" + mascota.getEdad() + ";" + mascota.getSalud() + ";" + mascota.getEnergia() + ";" + mascota.getFelicidad() + "\n");
+        } catch (Exception e) {
+            System.out.println("Error al guardar archivo: " + e.getMessage());
+        }
+    }
+    
+    
+
 }

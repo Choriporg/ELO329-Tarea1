@@ -1,10 +1,15 @@
 import javax.xml.stream.events.EntityReference;
 
+/**
+ * La clase Mascota representa a una mascota virtual con atributos como nombre, edad, salud, energía y felicidad.
+ * También tiene un estado que indica el estado emocional y físico de la mascota.
+ * La clase proporciona métodos para interactuar con la mascota, como aplicar medicina, jugar, alimentar, etc.
+ * Además, la clase tiene métodos para obtener y establecer los atributos de la mascota, así como para calcular su estado y emoji correspondiente.
+ * También tiene métodos para aumentar la edad de la mascota y para dormir.
+ * La clase Mascota se utiliza para crear y gestionar mascotas virtuales.
+ */
 public class Mascota {
-    /*Completar con los métodos, atributos y constructor de Mascota
-    dependiendo de la etapa*/
-
-    /* 2.1 Mascota virtual */
+ 
 
     private String nombre_mascota;
     private double Edad;

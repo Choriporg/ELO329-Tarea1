@@ -1,4 +1,8 @@
 import java.util.*;
+/**
+ * Esta clase abstracta representa un ítem genérico.
+ * Los atributos de la clase son protegidos para que las clases Comida, Juguete y Medicina puedan acceder a ellos.
+ */
 public abstract class Item {
     // Los atributos serán protected para que las clases Comida, Juguete y Medicina puedan acceder a ellos.
 
@@ -29,6 +33,13 @@ public abstract class Item {
     public abstract void printItemAplicado();
 }
 
+/**
+ * Esta clase representa un objeto de tipo Comida que hereda de la clase Item.
+ * La clase Comida se utiliza para crear objetos de comida que se pueden dar a una mascota.
+ * Cada objeto de Comida tiene un nombre, una cantidad y una mascota asociada.
+ * La clase Comida tiene un método darComida() que aplica la comida a la mascota y reduce la cantidad de comida disponible.
+ * También tiene un método printItemAplicado() que imprime un mensaje indicando que se está dando de comer a la mascota.
+ */
 class Comida extends Item{
 
     public Comida(String nombre, int cantidad,Mascota mascota){
@@ -44,6 +55,10 @@ class Comida extends Item{
     public void printItemAplicado(){System.out.println("\n\t>> Dando de comer "+nombre);}
 
 }
+/**
+ * Esta clase representa un objeto de tipo Medicina que se puede utilizar para tratar a una mascota.
+ * Extiende la clase Item y tiene métodos para dar medicina a una mascota y mostrar un mensaje cuando se aplica la medicina.
+ */
 class Medicina extends Item{
 
     public Medicina(String nombre, int cantidad,Mascota mascota){ //constructor de medicina.
@@ -57,6 +72,11 @@ class Medicina extends Item{
         }
     public void printItemAplicado(){System.out.println("\n\t>> Dando la medicina "+nombre);}
 }
+/**
+ * Esta clase representa un Juguete, que es un tipo de Item.
+ * Los juguetes se utilizan para interactuar con una Mascota.
+ * Cada juguete tiene un nombre, una cantidad y una mascota asociada.
+ */
 class Juguete extends Item{
 
     public Juguete(String nombre, int cantidad,Mascota mascota){

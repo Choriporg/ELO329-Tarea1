@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * La clase Inventario representa un inventario de items para mascotas.
+ * Permite agregar, usar y obtener los items del inventario.
+ */
 public class Inventario{
 
     private ArrayList<Item> items;
